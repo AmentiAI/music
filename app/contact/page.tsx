@@ -26,7 +26,8 @@ export default function ContactPage() {
               src={stockImages.contactBanner.src}
               alt={stockImages.contactBanner.alt}
               fill
-              sizes="100vw"
+              sizes="(max-width: 640px) 100vw, min(1180px, 92vw)"
+              quality={88}
               className="page-hero-banner-img"
               priority
             />

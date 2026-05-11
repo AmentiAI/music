@@ -24,9 +24,24 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   const closeNav = useCallback(() => setOpen(false), []);
 
   return (
+    <>
     <header
       className={[
         "site-header",
@@ -88,5 +103,14 @@ export function SiteHeader() {
         </nav>
       </div>
     </header>
+    {open ? (
+      <button
+        type="button"
+        className="nav-backdrop"
+        aria-label="Close menu"
+        onClick={closeNav}
+      />
+    ) : null}
+    </>
   );
 }

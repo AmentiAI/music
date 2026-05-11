@@ -25,17 +25,18 @@ export default function HomePage() {
                       pace, and sound.
                     </p>
                   </div>
-                  <div className="hero-copy-image" aria-hidden="true">
+                  <div className="hero-copy-image hero-copy-image--desktop" aria-hidden="true">
                     <Image
                       src={stockImages.heroAccent1.src}
                       alt=""
                       fill
-                      sizes="(max-width: 900px) 30vw, 180px"
+                      sizes="(max-width: 1200px) 200px, 240px"
+                      quality={88}
                       className="hero-figure-img"
                     />
                   </div>
                 </div>
-                <div className="hero-actions">
+                <div className="hero-actions hero-actions--home">
                   <Link className="btn btn-primary" href="/contact">
                     Book a lesson
                   </Link>
@@ -67,7 +68,8 @@ export default function HomePage() {
                       src={stockImages.hero.src}
                       alt={stockImages.hero.alt}
                       fill
-                      sizes="(max-width: 900px) 92vw, 340px"
+                      sizes="(max-width: 640px) 100vw, (max-width: 900px) 92vw, min(520px, 42vw)"
+                      quality={88}
                       className="hero-figure-img"
                       priority
                     />
@@ -82,7 +84,8 @@ export default function HomePage() {
                       src={stockImages.heroAccent1.src}
                       alt={stockImages.heroAccent1.alt}
                       fill
-                      sizes="(max-width: 900px) 44vw, 180px"
+                      sizes="(max-width: 900px) 42vw, 220px"
+                      quality={85}
                       className="hero-figure-img"
                       priority
                     />
@@ -92,7 +95,8 @@ export default function HomePage() {
                       src={stockImages.heroAccent2.src}
                       alt={stockImages.heroAccent2.alt}
                       fill
-                      sizes="(max-width: 900px) 44vw, 180px"
+                      sizes="(max-width: 900px) 42vw, 220px"
+                      quality={85}
                       className="hero-figure-img"
                       priority
                     />
@@ -108,18 +112,21 @@ export default function HomePage() {
             <Reveal>
               <div className="home-photo-strip">
                 <p className="home-photo-strip-label">Across instruments &amp; ages</p>
-                <div className="home-photo-strip-grid">
-                  {stockImages.homeStrip.map((item) => (
-                    <div key={item.id} className="home-strip-cell">
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        sizes="(max-width: 540px) 50vw, (max-width: 900px) 33vw, 180px"
-                        className="home-strip-img"
-                      />
-                    </div>
-                  ))}
+                <div className="home-photo-strip-scroll">
+                  <div className="home-photo-strip-grid">
+                    {stockImages.homeStrip.map((item) => (
+                      <div key={item.id} className="home-strip-cell">
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          sizes="(max-width: 640px) 72vw, (max-width: 900px) 40vw, 200px"
+                          quality={85}
+                          className="home-strip-img"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <p className="home-strip-cta">
                   <Link href="/studio" className="link-inline">
@@ -150,12 +157,14 @@ export default function HomePage() {
                     Strings, winds, rhythm section, and voice—structured for beginners through advancing players. See
                     every offering on the Lessons page.
                   </p>
-                  <Link className="btn btn-primary" href="/lessons" style={{ marginRight: "0.65rem" }}>
-                    Full instrument list
-                  </Link>
-                  <Link className="btn btn-ghost" href="/instructors">
-                    Meet faculty
-                  </Link>
+                  <div className="home-lessons-cta">
+                    <Link className="btn btn-primary" href="/lessons">
+                      Full instrument list
+                    </Link>
+                    <Link className="btn btn-ghost" href="/instructors">
+                      Meet faculty
+                    </Link>
+                  </div>
                   <aside className="callout callout-gift" style={{ marginTop: "2rem" }}>
                     <div className="callout-body">
                       <h3>Gift certificates</h3>
@@ -177,7 +186,8 @@ export default function HomePage() {
                       src={stockImages.strings.src}
                       alt={stockImages.strings.alt}
                       fill
-                      sizes="(max-width: 900px) 45vw, 280px"
+                      sizes="(max-width: 640px) 100vw, (max-width: 900px) 90vw, 360px"
+                      quality={85}
                       className="home-bento-img"
                     />
                   </div>
@@ -186,7 +196,8 @@ export default function HomePage() {
                       src={stockImages.winds.src}
                       alt={stockImages.winds.alt}
                       fill
-                      sizes="(max-width: 900px) 45vw, 200px"
+                      sizes="(max-width: 640px) 100vw, (max-width: 900px) 90vw, 320px"
+                      quality={85}
                       className="home-bento-img"
                     />
                   </div>
@@ -195,7 +206,8 @@ export default function HomePage() {
                       src={stockImages.voice.src}
                       alt={stockImages.voice.alt}
                       fill
-                      sizes="(max-width: 900px) 45vw, 200px"
+                      sizes="(max-width: 640px) 100vw, (max-width: 900px) 90vw, 320px"
+                      quality={85}
                       className="home-bento-img"
                     />
                   </div>
@@ -226,6 +238,7 @@ export default function HomePage() {
                       alt={stockImages.studioInPerson.alt}
                       fill
                       sizes="(max-width: 700px) 100vw, 50vw"
+                      quality={85}
                       className="format-card-img"
                     />
                   </div>
@@ -246,6 +259,7 @@ export default function HomePage() {
                       alt={stockImages.studioOnline.alt}
                       fill
                       sizes="(max-width: 700px) 100vw, 50vw"
+                      quality={85}
                       className="format-card-img"
                     />
                   </div>
@@ -282,7 +296,8 @@ export default function HomePage() {
                     src={stockImages.contactBanner.src}
                     alt={stockImages.contactBanner.alt}
                     fill
-                    sizes="(max-width: 900px) 100vw, 400px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 900px) 90vw, 400px"
+                    quality={85}
                     className="home-resources-img"
                   />
                 </div>
@@ -346,8 +361,8 @@ export default function HomePage() {
               </header>
             </Reveal>
             <Reveal delay="1">
-              <p style={{ margin: 0 }}>
-                <Link className="btn btn-primary" href="/contact">
+              <p className="section-contact-cta">
+                <Link className="btn btn-primary btn-full-mobile" href="/contact">
                   Go to full contact form →
                 </Link>
               </p>

@@ -24,7 +24,8 @@ export default function StudioPage() {
               src={stockImages.studioInPerson.src}
               alt={stockImages.studioInPerson.alt}
               fill
-              sizes="100vw"
+              sizes="(max-width: 640px) 100vw, min(1180px, 92vw)"
+              quality={88}
               className="page-hero-banner-img"
               priority
             />
@@ -42,7 +43,8 @@ export default function StudioPage() {
                       src={item.src}
                       alt={item.alt}
                       fill
-                      sizes="(max-width: 640px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      quality={85}
                       className="studio-photo-img"
                     />
                   </div>
