@@ -1,21 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Serif_Display, Outfit } from "next/font/google";
+import { Plus_Jakarta_Sans, Syne } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const dmSerif = DM_Serif_Display({
+const syne = Syne({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif-display",
+  variable: "--font-syne",
   display: "swap",
 });
 
-const outfit = Outfit({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -28,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#fafafa",
 };
 
 export default function RootLayout({
@@ -38,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSerif.variable} ${outfit.variable}`}>
+      <body className={`${syne.variable} ${plusJakarta.variable}`}>
         <a className="skip-link" href="#main">
           Skip to content
         </a>
